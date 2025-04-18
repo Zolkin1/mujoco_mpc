@@ -1,9 +1,14 @@
 <mujoco model="g1_29dof_rev_1_0">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option timestep="0.02" iterations="1" ls_iterations="5">
-    <flag eulerdamp="disable"/>
+  <option timestep="0.02" iterations="100" ls_iterations="5" integrator="implicitfast">
   </option>
+<!--  impratio="100"-->
+
+<!--  <option timestep="0.02" iterations="1" ls_iterations="5">-->
+<!--    <flag eulerdamp="disable"/>-->
+<!--  </option>-->
+
 
   <custom>
     <numeric data="15" name="max_contact_points" />

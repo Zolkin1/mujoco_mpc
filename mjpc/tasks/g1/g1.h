@@ -15,12 +15,7 @@ namespace mjpc
         class ResidualFn : public mjpc::BaseResidualFn {
         public:
             explicit ResidualFn(const G1* task) : mjpc::BaseResidualFn(task) {}
-            // -------- Residuals for particle task -------
-            //   Number of residuals: 3
-            //     Residual (0): position - goal_position
-            //     Residual (1): velocity
-            //     Residual (2): control
-            // --------------------------------------------
+
             void Residual(const mjModel* model, const mjData* data,
                           double* residual) const override;
         };
@@ -34,8 +29,12 @@ namespace mjpc
         }
         ResidualFn* InternalResidual() override { return &residual_; }
 
+        static void JointTracking(const mjModel* model, const mjData* data, double* joint_target,
+            double* residual, int& resid_idx);
+
     private:
         ResidualFn residual_;
+        static constexpr int JOINT_DIM = 29;
     };
 }
 

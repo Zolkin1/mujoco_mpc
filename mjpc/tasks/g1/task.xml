@@ -19,10 +19,11 @@
     </custom>
 
     <sensor>
-        <user name="JointConfig" dim="29" user="0 1.0 0.0 10.0" />
-        <user name="BasePosition" dim="7" user="0 10.0 0.0 10.0" />
-        <user name="JointVelocity" dim="29" user="0 0.1 0.0 1.0" />
+        <user name="BasePosition" dim="3" user="0 10.0 0.0 10.0" />
+        <user name="BaseOrientation" dim="4" user="0 1.0 0.0 10.0" />
+        <user name="JointConfig" dim="29" user="0 0.1 0.0 10.0" />
         <user name="BaseVelocity" dim="6" user="0 0.1 0.0 1.0" />
+        <user name="JointVelocity" dim="29" user="0 0.1 0.0 1.0" />
         <user name="Control" dim="29" user="0 0.1 0.0 1.0" />
 <!--        <framepos name="trace0" objtype="site" objname="tip"/>-->
 <!--        <framepos name="position" objtype="site" objname="tip"/>-->
@@ -31,7 +32,7 @@
     </sensor>
 
     <worldbody>
-        <body name="goal" mocap="true" pos="0.25 0 0.5" quat="1 0 0 0">
+        <body name="goal" mocap="true" pos="0 0 0.7" quat="1 0 0 0">
             <geom type="sphere" size=".1" contype="0" conaffinity="0" rgba="0 1 0 .5"/>
         </body>
     </worldbody>

@@ -20,7 +20,6 @@ add_custom_target(
   ## Custom
 # G1
 
-
   ## dm_control models
   # acrobot
   COMMAND ${CMAKE_COMMAND} -E copy

@@ -18,6 +18,9 @@
 #include <vector>
 
 #include "mjpc/task.h"
+
+#include "mjpc/tasks/g1/g1.h"
+
 #include "mjpc/tasks/acrobot/acrobot.h"
 #include "mjpc/tasks/allegro/allegro.h"
 #include "mjpc/tasks/bimanual/handover/handover.h"
@@ -45,6 +48,9 @@ namespace mjpc {
 
 std::vector<std::shared_ptr<Task>> GetTasks() {
   return {
+      // Custom
+      std::make_shared<G1>(),
+      //MJPC
       std::make_shared<Acrobot>(),
       std::make_shared<Allegro>(),
       std::make_shared<aloha::Handover>(),

@@ -32,6 +32,12 @@ namespace mjpc
         static void JointTracking(const mjModel* model, const mjData* data, double* joint_target,
             double* residual, int& resid_idx);
 
+        static std::vector<double> GetMocapReference(double time, const std::vector<std::vector<double>>& reference_data);
+
+        static double GetDesFootPos(int l_or_r, double time);
+
+        static double ComputeSpline(double time, double total_time);
+
     private:
         ResidualFn residual_;
         static constexpr int JOINT_DIM = 29;

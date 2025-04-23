@@ -105,7 +105,7 @@
     <light pos="1 0 3.5" dir="0 0 -1" directional="true"/>
     <body name="pelvis" pos="0 0 0.793" childclass="g1">
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000399148 0" mass="3.813" diaginertia="0.010549 0.0093089 0.0079184"/>
-      <freejoint name="floating_base_joint"/>
+<!--      <freejoint name="floating_base_joint"/>-->
       <geom class="visual" material="black" mesh="pelvis"/>
       <geom class="visual" mesh="pelvis_contour_link"/>
       <geom class="pelvis_collision"/>
@@ -367,20 +367,39 @@
     <framelinvel name="imu_in_torso_linvel" objtype="site" objname="imu_in_torso"/>
     <gyro site="imu_in_pelvis" name="imu-pelvis-angular-velocity" cutoff="34.9" noise="0.0005"/>
     <accelerometer site="imu_in_pelvis" name="imu-pelvis-linear-acceleration" cutoff="157" noise="0.01"/>
+
+    <framepos name="left_ankle" objname="left_ankle_pitch_link" objtype="body"/>
+    <framepos name="right_ankle" objname="right_ankle_pitch_link" objtype="body"/>
   </sensor>
 
   <keyframe>
+<!--    <key name="stand"-->
+<!--      qpos="-->
+<!--      0 0 0.74-->
+<!--      1 0 0 0-->
+<!--      -0.42 0 0 0.81 -0.4 0-->
+<!--      -0.42 0 0 0.81 -0.4 0-->
+<!--      0 0 0-->
+<!--      0 0.27 0 0.5 0 0 0-->
+<!--      0 -0.27 0 0.5 0 0 0-->
+<!--      "-->
+<!--      ctrl="-->
+<!--      0 0 0 0 0 0-->
+<!--      0 0 0 0 0 0-->
+<!--      0 0 0-->
+<!--      0.2 0.2 0 1.28 0 0 0-->
+<!--      0.2 -0.2 0 1.28 0 0 0-->
+<!--      "/>-->
+
     <key name="stand"
-      qpos="
-      0 0 0.79
-      1 0 0 0
-      0 0 0 0 0 0
-      0 0 0 0 0 0
+         qpos="
+      -0.42 0 0 0.81 -0.4 0
+      -0.42 0 0 0.81 -0.4 0
       0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
+      0 0.27 0 0.5 0 0 0
+      0 -0.27 0 0.5 0 0 0
       "
-      ctrl="
+         ctrl="
       0 0 0 0 0 0
       0 0 0 0 0 0
       0 0 0

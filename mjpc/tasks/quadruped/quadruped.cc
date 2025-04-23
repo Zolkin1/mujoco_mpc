@@ -532,8 +532,8 @@ void QuadrupedFlat::ResetLocked(const mjModel* model) {
   residual_.height_cost_id_ = CostTermByName(model, "Height");
 
   // ----------  model identifiers  ----------
-  residual_.torso_body_id_ = mj_name2id(model, mjOBJ_XBODY, "trunk");
-  if (residual_.torso_body_id_ < 0) mju_error("body 'trunk' not found");
+  residual_.torso_body_id_ = mj_name2id(model, mjOBJ_XBODY, "torso");
+  if (residual_.torso_body_id_ < 0) mju_error("body 'torso' not found");
 
   residual_.head_site_id_ = mj_name2id(model, mjOBJ_SITE, "head");
   if (residual_.head_site_id_ < 0) mju_error("site 'head' not found");
@@ -546,7 +546,7 @@ void QuadrupedFlat::ResetLocked(const mjModel* model) {
 
   // foot geom ids
   int foot_index = 0;
-  for (const char* footname : {"FL", "HL", "FR", "HR"}) {
+  for (const char* footname : {"FL", "RL", "FR", "RR"}) {
     int foot_id = mj_name2id(model, mjOBJ_GEOM, footname);
     if (foot_id < 0) mju_error_s("geom '%s' not found", footname);
     residual_.foot_geom_id_[foot_index] = foot_id;
@@ -555,7 +555,7 @@ void QuadrupedFlat::ResetLocked(const mjModel* model) {
 
   // shoulder body ids
   int shoulder_index = 0;
-  for (const char* shouldername : {"FL_hip", "HL_hip", "FR_hip", "HR_hip"}) {
+  for (const char* shouldername : {"FL_hip", "RL_hip", "FR_hip", "RR_hip"}) {
     int foot_id = mj_name2id(model, mjOBJ_BODY, shouldername);
     if (foot_id < 0) mju_error_s("body '%s' not found", shouldername);
     residual_.shoulder_body_id_[shoulder_index] = foot_id;

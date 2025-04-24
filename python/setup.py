@@ -286,7 +286,7 @@ setuptools.setup(
     install_requires=[
         "brax",
         "grpcio",
-        "matplotlib",
+        # "matplotlib",
         "mediapy",
         "mujoco >= 3.1.1",
         "mujoco-mjx",

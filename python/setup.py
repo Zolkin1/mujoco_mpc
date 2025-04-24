@@ -284,12 +284,12 @@ setuptools.setup(
         "grpcio",
     ],
     install_requires=[
-        "brax",
+        # "brax",
         "grpcio",
         # "matplotlib",
         "mediapy",
         "mujoco >= 3.1.1",
-        "mujoco-mjx",
+        # "mujoco-mjx",
         "protobuf",
     ],
     extras_require={
